@@ -1,0 +1,24 @@
+mode: set
+github.com/matzhouse/go-data-structures/list/list.go:23.22,25.2 1 1
+github.com/matzhouse/go-data-structures/list/list.go:29.48,37.2 1 1
+github.com/matzhouse/go-data-structures/list/list.go:41.58,53.48 4 1
+github.com/matzhouse/go-data-structures/list/list.go:64.2,64.15 1 1
+github.com/matzhouse/go-data-structures/list/list.go:53.48,62.3 2 1
+github.com/matzhouse/go-data-structures/list/list.go:70.51,77.37 3 1
+github.com/matzhouse/go-data-structures/list/list.go:84.2,84.10 1 1
+github.com/matzhouse/go-data-structures/list/list.go:77.37,82.3 2 1
+github.com/matzhouse/go-data-structures/list/list.go:90.53,99.2 2 1
+github.com/matzhouse/go-data-structures/list/list.go:103.47,107.45 1 1
+github.com/matzhouse/go-data-structures/list/list.go:107.45,109.20 1 1
+github.com/matzhouse/go-data-structures/list/list.go:109.20,114.4 1 0
+github.com/matzhouse/go-data-structures/list/list.go:121.60,133.2 2 1
+github.com/matzhouse/go-data-structures/list/list.go:136.35,146.15 3 1
+github.com/matzhouse/go-data-structures/list/list.go:154.2,154.12 1 1
+github.com/matzhouse/go-data-structures/list/list.go:146.15,147.20 1 1
+github.com/matzhouse/go-data-structures/list/list.go:151.3,151.13 1 1
+github.com/matzhouse/go-data-structures/list/list.go:147.20,150.4 1 1
+github.com/matzhouse/go-data-structures/list/list.go:160.43,167.15 2 1
+github.com/matzhouse/go-data-structures/list/list.go:174.2,174.14 1 1
+github.com/matzhouse/go-data-structures/list/list.go:167.15,168.31 1 1
+github.com/matzhouse/go-data-structures/list/list.go:171.3,171.13 1 1
+github.com/matzhouse/go-data-structures/list/list.go:168.31,170.4 1 1
