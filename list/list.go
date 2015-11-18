@@ -6,7 +6,6 @@ import (
 	"container/list"
 	"fmt"
 	"reflect"
-	"sync"
 )
 
 // List stores a reference to the Root node of a linked list
