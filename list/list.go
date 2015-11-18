@@ -1,3 +1,5 @@
+// Package list provides the functions for creating and useing a singly linked
+// list.
 package list
 
 import (
@@ -10,8 +12,6 @@ import (
 // List stores a reference to the Root node of a linked list
 type List struct {
 	Root *Element
-
-	mu sync.Mutex // Mutex to protect the list on an insert
 }
 
 // Element stores a value in the list with a reference to the next item
@@ -25,8 +25,8 @@ func NewList() *List {
 	return &List{}
 }
 
-// NewListWithValue takes an initial value and returns a list value with the value set
-// as the Root node
+// NewListWithValue takes an initial value and returns a list value with the
+// value set as the Root node
 func NewListWithValue(value interface{}) *List {
 
 	return &List{
@@ -66,8 +66,8 @@ func NewListFromGoList(values *list.List) (*List, error) {
 
 }
 
-// NewListFromSlice takes an initial value and returns a list value with the value set
-// as the Root node
+// NewListFromSlice takes an initial value and returns a list value with the
+// value set as the Root node
 func NewListFromSlice(values []interface{}) *List {
 
 	// Make a list with the last value in the slice
@@ -86,8 +86,8 @@ func NewListFromSlice(values []interface{}) *List {
 
 }
 
-// InsertAtBeginning takes a value and adds it to the beginning of the list referenced
-// in the pointer receiver
+// InsertAtBeginning takes a value and adds it to the beginning of the list
+// referenced in the pointer receiver
 func (l *List) InsertAtBeginning(value interface{}) {
 
 	// Create a new element with the current root as its next
@@ -103,6 +103,8 @@ func (l *List) InsertAtBeginning(value interface{}) {
 
 // InsertAtEnd takes a value and adds it to the end of the list referenced
 // in the pointer receiver. This is a simple loop to find the end
+// TODO: could be made faster with a reference to the last element in the
+// List struct
 func (l *List) InsertAtEnd(value interface{}) {
 
 	nel := &Element{

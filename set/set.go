@@ -1,3 +1,5 @@
+// Package set provides the functions for creating and useing a set data
+// structure which has no duplicates
 package set
 
 import (
@@ -6,8 +8,9 @@ import (
 	"github.com/matzhouse/go-data-structures/list"
 )
 
-// Set implements a structure where only a single copy of an element may exist in a
-// set.
+// Set implements a structure where only a single copy of an element may
+// exist in a set. Set has a list embedded in it and can therefore use the
+// list methods, including contains.
 type Set struct {
 	*list.List
 }
