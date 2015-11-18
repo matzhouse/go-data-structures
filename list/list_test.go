@@ -104,7 +104,6 @@ func Test_InsertAtBeginning(t *testing.T) {
 func Test_InsertAtEnd(t *testing.T) {
 
 	l := NewListFromSlice([]interface{}{1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
-	l.InsertAtBeginning("hello")
 
 	l.InsertAtEnd("!")
 
@@ -167,9 +166,7 @@ func Test_Contains(t *testing.T) {
 	l := NewListWithValue("world")
 	l.InsertAtBeginning("hello")
 
-	if l.Contains(&Element{
-		Value: "world",
-	}) == false {
+	if l.Contains("world") == nil {
 		t.Fail()
 	}
 
@@ -180,9 +177,7 @@ func Test_ContainsNegative(t *testing.T) {
 	l := NewListWithValue("world")
 	l.InsertAtBeginning("hello")
 
-	if l.Contains(&Element{
-		Value: "world123",
-	}) {
+	if l.Contains("world123") != nil {
 		t.Fail()
 	}
 
@@ -192,9 +187,7 @@ func Test_ContainsEmptyList(t *testing.T) {
 
 	l := NewList()
 
-	if l.Contains(&Element{
-		Value: "world123",
-	}) {
+	if l.Contains("world123") != nil {
 		t.Fail()
 	}
 

@@ -3,7 +3,6 @@ package list
 import (
 	"container/list"
 	"fmt"
-	"log"
 	"reflect"
 	"sync"
 )
@@ -91,11 +90,13 @@ func NewListFromSlice(values []interface{}) *List {
 // in the pointer receiver
 func (l *List) InsertAtBeginning(value interface{}) {
 
+	// Create a new element with the current root as its next
 	el := &Element{
 		Value: value,
 		Next:  l.Root,
 	}
 
+	// Set the new element as the root
 	l.Root = el
 
 }
@@ -110,6 +111,7 @@ func (l *List) InsertAtEnd(value interface{}) {
 
 	if l.Root == nil {
 		l.Root = nel
+		return
 	}
 
 	// Traverse the list until we find the current end element, at which point we
@@ -117,7 +119,7 @@ func (l *List) InsertAtEnd(value interface{}) {
 	for n := l.Root; n.Next != nil; n = n.Next {
 
 		if n.Next == nil {
-			// Add a value of 1 to the count
+			// set the new element
 			n.Next = nel
 		}
 
@@ -171,23 +173,25 @@ func (l *List) Length() (len int) {
 
 // Contains takes a value and returns a boolean based on whether the value
 // appears in the list or not
-func (l *List) Contains(el *Element) bool {
+func (l *List) Contains(v interface{}) *Element {
 
 	// check for empty list
 	if l.Root != nil {
 
+		el := &Element{
+			Value: v,
+		}
+
 		// Traverse the list and check each element for comparison with the supplied
 		// element input
-		for n := l.Root; n.Next != nil; n = n.Next {
+		for n := l.Root; n != nil; n = n.Next {
 			if reflect.DeepEqual(n.Value, el.Value) {
-				log.Println(n.Value)
-				log.Println(el.Value)
-				return true
+				return n
 			}
 		}
 
 	}
 
-	return false
+	return nil
 
 }

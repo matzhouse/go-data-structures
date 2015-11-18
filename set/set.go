@@ -24,15 +24,11 @@ func NewSet() *Set {
 // Add takes a value and adds it to the Set so long as it doesn't exist.
 func (s *Set) Add(value interface{}) (err error) {
 
-	if s.List.Contains(&list.Element{
-		Value: value,
-	}) == true {
+	if s.List.Contains(value) != nil {
 		return fmt.Errorf("element already in the list")
 	}
 
-	s.List.InsertAtBeginning(&list.Element{
-		Value: value,
-	})
+	s.List.InsertAtBeginning(value)
 
 	return nil
 
